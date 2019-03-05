@@ -23,7 +23,7 @@
 
 		<!-- 生成model实体类文件位置 -->
 		<javaModelGenerator
-			targetPackage="com.leon.ssm.model" targetProject="src/main/java">
+			targetPackage="com.leon.ssm.bo" targetProject="src/main/java">
 			<property name="enableSubPackages" value="true" />
 			<property name="trimStrings" value="true" />
 		</javaModelGenerator>

@@ -1,6 +1,6 @@
 package com.leon.ssm.mapper;
 
-import com.leon.ssm.model.User;
+import com.leon.ssm.bo.User;
 
 public interface UserMapper {
     int deleteByPrimaryKey(Integer id);

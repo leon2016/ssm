@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.leon.ssm.mapper.GroupMapper">
-  <resultMap id="BaseResultMap" type="com.leon.ssm.model.Group">
+  <resultMap id="BaseResultMap" type="com.leon.ssm.bo.Group">
     <id column="id" jdbcType="VARCHAR" property="id" />
     <result column="group_name" jdbcType="VARCHAR" property="groupName" />
     <result column="desc" jdbcType="VARCHAR" property="desc" />
@@ -67,7 +67,7 @@
   <sql id="Base_Column_List">
     id, group_name, desc
   </sql>
-  <select id="selectByExample" parameterType="com.leon.ssm.model.GroupExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.leon.ssm.bo.GroupExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -91,13 +91,13 @@
     delete from group_t
     where id = #{id,jdbcType=VARCHAR}
   </delete>
-  <delete id="deleteByExample" parameterType="com.leon.ssm.model.GroupExample">
+  <delete id="deleteByExample" parameterType="com.leon.ssm.bo.GroupExample">
     delete from group_t
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.leon.ssm.model.Group">
+  <insert id="insert" parameterType="com.leon.ssm.bo.Group">
     <selectKey keyProperty="id" order="BEFORE" resultType="java.lang.String">
       select uuid_short()
     </selectKey>
@@ -106,7 +106,7 @@
     values (#{id,jdbcType=VARCHAR}, #{groupName,jdbcType=VARCHAR}, #{desc,jdbcType=VARCHAR}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.leon.ssm.model.Group">
+  <insert id="insertSelective" parameterType="com.leon.ssm.bo.Group">
     <selectKey keyProperty="id" order="BEFORE" resultType="java.lang.String">
       select uuid_short()
     </selectKey>
@@ -130,7 +130,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.leon.ssm.model.GroupExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.leon.ssm.bo.GroupExample" resultType="java.lang.Long">
     select count(*) from group_t
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -162,7 +162,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.leon.ssm.model.Group">
+  <update id="updateByPrimaryKeySelective" parameterType="com.leon.ssm.bo.Group">
     update group_t
     <set>
       <if test="groupName != null">
@@ -174,7 +174,7 @@
     </set>
     where id = #{id,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.leon.ssm.model.Group">
+  <update id="updateByPrimaryKey" parameterType="com.leon.ssm.bo.Group">
     update group_t
     set group_name = #{groupName,jdbcType=VARCHAR},
       desc = #{desc,jdbcType=VARCHAR}

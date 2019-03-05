@@ -1,4 +1,4 @@
-package com.leon.ssm.model;
+package com.leon.ssm.bo;
 
 public class User {
     private Integer id;

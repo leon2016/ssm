@@ -1,7 +1,7 @@
 package com.leon.ssm.mapper;
 
-import com.leon.ssm.model.Group;
-import com.leon.ssm.model.GroupExample;
+import com.leon.ssm.bo.Group;
+import com.leon.ssm.bo.GroupExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
