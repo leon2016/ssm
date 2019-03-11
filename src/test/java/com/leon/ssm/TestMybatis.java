@@ -1,4 +1,4 @@
-package com.leon.ssm.test;
+package com.leon.ssm;
 
 import javax.annotation.Resource;
 
