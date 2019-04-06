@@ -1252,3 +1252,35 @@ Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No b
 [WARN] [2019-04-06 21:54:15][org.springframework.web.servlet.PageNotFound]No mapping found for HTTP request with URI [/ssm/user/showUser/1] in DispatcherServlet with name 'SpringMVC'
 [WARN] [2019-04-06 21:54:19][org.springframework.web.servlet.PageNotFound]No mapping found for HTTP request with URI [/ssm/user/showUser/1] in DispatcherServlet with name 'SpringMVC'
 [WARN] [2019-04-06 21:54:24][org.springframework.web.servlet.PageNotFound]No mapping found for HTTP request with URI [/ssm/user/showUser/1] in DispatcherServlet with name 'SpringMVC'
+[INFO] [2019-04-06 22:17:28][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization started
+[INFO] [2019-04-06 22:17:28][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing Root WebApplicationContext: startup date [Sat Apr 06 22:17:28 CST 2019]; root of context hierarchy
+[INFO] [2019-04-06 22:17:28][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO] [2019-04-06 22:17:29][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [jdbc.properties]
+[INFO] [2019-04-06 22:17:29][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO] [2019-04-06 22:17:30][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization completed in 1289 ms
+[INFO] [2019-04-06 22:17:30][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'SpringMVC': initialization started
+[INFO] [2019-04-06 22:17:30][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Sat Apr 06 22:17:30 CST 2019]; parent: Root WebApplicationContext
+[INFO] [2019-04-06 22:17:30][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO] [2019-04-06 22:17:30][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO] [2019-04-06 22:17:30][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/sys/user/{id}],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.leon.ssm.controller.UserController.toIndex(javax.servlet.http.HttpServletRequest,int,org.springframework.ui.Model)
+[INFO] [2019-04-06 22:17:31][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'SpringMVC': initialization completed in 1133 ms
+[WARN] [2019-04-06 22:18:01][org.springframework.web.servlet.PageNotFound]No mapping found for HTTP request with URI [/ssm/user/showUser/1] in DispatcherServlet with name 'SpringMVC'
+[INFO] [2019-04-06 22:39:50][org.springframework.web.context.support.XmlWebApplicationContext]Closing WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Sat Apr 06 22:17:30 CST 2019]; parent: Root WebApplicationContext
+[INFO] [2019-04-06 22:39:50][org.springframework.web.context.support.XmlWebApplicationContext]Closing Root WebApplicationContext: startup date [Sat Apr 06 22:17:28 CST 2019]; root of context hierarchy
+[INFO] [2019-04-06 22:40:02][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization started
+[INFO] [2019-04-06 22:40:02][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing Root WebApplicationContext: startup date [Sat Apr 06 22:40:02 CST 2019]; root of context hierarchy
+[INFO] [2019-04-06 22:40:02][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO] [2019-04-06 22:40:02][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [jdbc.properties]
+[INFO] [2019-04-06 22:40:02][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO] [2019-04-06 22:40:03][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization completed in 1035 ms
+[INFO] [2019-04-06 22:40:03][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'SpringMVC': initialization started
+[INFO] [2019-04-06 22:40:03][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Sat Apr 06 22:40:03 CST 2019]; parent: Root WebApplicationContext
+[INFO] [2019-04-06 22:40:03][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO] [2019-04-06 22:40:03][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO] [2019-04-06 22:40:03][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/sys/user/{id}],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.leon.ssm.controller.UserController.toIndex(javax.servlet.http.HttpServletRequest,int,org.springframework.ui.Model)
+[INFO] [2019-04-06 22:40:04][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'SpringMVC': initialization completed in 979 ms
+[INFO] [2019-04-06 22:40:13][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO] [2019-04-06 22:40:14][org.springframework.context.support.GenericApplicationContext]Refreshing org.springframework.context.support.GenericApplicationContext@787169e6: startup date [Sat Apr 06 22:40:14 CST 2019]; root of context hierarchy
+[INFO] [2019-04-06 22:40:14][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [jdbc.properties]
+[INFO] [2019-04-06 22:40:16][com.leon.ssm.TestMybatis]{"age":24,"id":1,"password":"sfasgfaf","userName":"测试"}
+[INFO] [2019-04-06 22:40:16][org.springframework.context.support.GenericApplicationContext]Closing org.springframework.context.support.GenericApplicationContext@787169e6: startup date [Sat Apr 06 22:40:14 CST 2019]; root of context hierarchy
