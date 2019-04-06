@@ -1,0 +1,323 @@
+# ssm
+整合springMVC+Spring+Mybatis+Mybatis自动代码生成插件
+pom.xml:
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.leon</groupId>
+	<artifactId>ssm</artifactId>
+	<packaging>war</packaging>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>ssm Maven Webapp</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<!-- spring版本号 -->
+		<spring.version>4.0.2.RELEASE</spring.version>
+		<!-- jsp相关 -->
+		<jstl.version>1.2</jstl.version>
+		<servlet-api.version>2.5</servlet-api.version>
+		<jsp-api.version>2.0</jsp-api.version>
+		<!-- mybatis版本号 -->
+		<mybatis.version>3.4.2</mybatis.version>
+		<!-- mybatis-spring整合包 -->
+		<mybatis.spring.version>1.3.1</mybatis.spring.version>
+		<mybatis.generator.version>1.3.5</mybatis.generator.version>
+		<mysql.version>5.1.38</mysql.version>
+		<!-- log4j日志文件管理包版本 -->
+		<slf4j.version>1.7.7</slf4j.version>
+		<log4j.version>1.2.17</log4j.version>
+		<junit.version>4.12</junit.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<!-- 表示开发的时候引入，发布的时候不会加载此包 -->
+			<scope>test</scope>
+		</dependency>
+		<!-- spring核心包 -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-oxm</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aop</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<!-- mybatis核心包 -->
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis</artifactId>
+			<version>${mybatis.version}</version>
+		</dependency>
+		<!-- mybatis/spring包 -->
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis-spring</artifactId>
+			<version>${mybatis.spring.version}</version>
+		</dependency>
+
+		<!-- 导入java ee jar 包 -->
+		<!-- <dependency> -->
+		<!-- <groupId>javax</groupId> -->
+		<!-- <artifactId>javaee-api</artifactId> -->
+		<!-- <version>7.0</version> -->
+		<!-- <exclusions> -->
+		<!-- <exclusion> -->
+		<!-- <groupId>javax.servlet</groupId> -->
+		<!-- <artifactId>servlet-api</artifactId> -->
+		<!-- </exclusion> -->
+		<!-- <exclusion> -->
+		<!-- <groupId>javax.servlet</groupId> -->
+		<!-- <artifactId>jsp-api</artifactId> -->
+		<!-- </exclusion> -->
+		<!-- </exclusions> -->
+		<!-- </dependency> -->
+
+		<!-- 导入Mysql数据库链接jar包 -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>${mysql.version}</version>
+		</dependency>
+
+		<!-- 导入dbcp的jar包，用来在applicationContext.xml中配置数据库 -->
+		<dependency>
+			<groupId>commons-dbcp</groupId>
+			<artifactId>commons-dbcp</artifactId>
+			<version>1.2.2</version>
+		</dependency>
+
+		<!-- JSP相关 -->
+		<dependency>
+			<groupId>jstl</groupId>
+			<artifactId>jstl</artifactId>
+			<version>${jstl.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>${servlet-api.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jsp-api</artifactId>
+			<version>${jsp-api.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- 日志文件管理包 -->
+		<!-- log start -->
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>${log4j.version}</version>
+		</dependency>
+
+
+		<!-- 格式化对象，方便输出日志 -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.1.41</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
+		<!-- log end -->
+		<!-- JSON -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.7.0</version>
+		</dependency>
+		<!-- 上传组件包 -->
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+			<version>1.3.1</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.4</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>1.9</version>
+		</dependency>
+
+		<!-- Mybatis自动生成插件 -->
+		<dependency>
+			<groupId>org.mybatis.generator</groupId>
+			<artifactId>mybatis-generator-core</artifactId>
+			<version>${mybatis.generator.version}</version>
+		</dependency>
+
+
+	</dependencies>
+
+
+	<!-- <profiles> -->
+	<!-- <profile> -->
+	<!-- <id>dev</id> -->
+	<!-- <build> -->
+	<!-- <filters> -->
+	<!-- <filter>src/main/resources/filters/dev.properties</filter> -->
+	<!-- </filters> -->
+	<!-- </build> -->
+	<!-- </profile> -->
+	<!-- <profile> -->
+	<!-- <id>prod</id> -->
+	<!-- <activation> 这里是关键，让这个版本默认激活 -->
+	<!-- <activeByDefault>true</activeByDefault> -->
+	<!-- </activation> -->
+	<!-- <build> -->
+	<!-- <filters> -->
+	<!-- <filter>src/main/resources/filters/prod.properties</filter> -->
+	<!-- </filters> -->
+	<!-- </build> -->
+	<!-- </profile> -->
+	<!-- </profiles> -->
+
+	<build>
+		<finalName>ssm</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.5.1</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>
+
+			<!-- 配置Tomcat插件 -->
+			<plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<version>2.2</version>
+				<configuration>
+					<port>8888</port>
+					<path>/ssm</path>
+				</configuration>
+			</plugin>
+
+			<!-- mybatis自动生成代码插件 -->
+			<plugin>
+				<groupId>org.mybatis.generator</groupId>
+				<artifactId>mybatis-generator-maven-plugin</artifactId>
+				<version>1.3.2</version>
+				<configuration>
+					<!-- mybatis用于生成代码的配置文件 -->
+					<configurationFile>src/main/resources/generatorConfig.xml</configurationFile>
+					<verbose>true</verbose>
+					<overwrite>true</overwrite>
+				</configuration>
+				<dependencies>
+
+					<dependency>
+						<groupId>mysql</groupId>
+						<artifactId>mysql-connector-java</artifactId>
+						<version>${mysql.version}</version>
+					</dependency>
+
+					<dependency>
+						<groupId>org.mybatis.generator</groupId>
+						<artifactId>mybatis-generator-core</artifactId>
+						<version>${mybatis.generator.version}</version>
+					</dependency>
+
+					<dependency>
+						<groupId>org.mybatis</groupId>
+						<artifactId>mybatis</artifactId>
+						<version>${mybatis.version}</version>
+					</dependency>
+
+				</dependencies>
+			</plugin>
+		</plugins>
+
+		<!-- <resources> -->
+		<!-- <resource> -->
+		<!-- <directory>src/main/resources</directory> -->
+		<!-- <includes> -->
+		<!-- <include>**/*.properties</include> -->
+		<!-- <include>**/*.xml</include> -->
+		<!-- <include>**/*.ini</include> -->
+		<!-- </includes> -->
+		<!-- <filtering>false</filtering> -->
+		<!-- </resource> -->
+		<!-- <resource> -->
+		<!-- <directory>src/main/java</directory> -->
+		<!-- <includes> -->
+		<!-- <include>**/*.properties</include> -->
+		<!-- <include>**/*.xml</include> -->
+		<!-- </includes> -->
+		<!-- <filtering>false</filtering>true时其含义是扫描src/main/resources/下的所有properties和xml文件将其中的${}引用在打包时换成直接引用。filtering标签的作用就是这个。 -->
+		<!-- </resource> -->
+		<!-- </resources> -->
+	</build>
+
+</project>
